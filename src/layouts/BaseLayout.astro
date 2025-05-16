@@ -1,0 +1,98 @@
+---
+interface Props {
+	title: string;
+	description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<title>{title} | Cozy Game Corner</title>
+	</head>
+	<body class="bg-pastel-green font-sans text-gray-800">
+		<Header />
+		<main class="container mx-auto py-8">
+			<slot />
+		</main>
+		<Footer />
+		<style is:global>
+			:root {
+				--pastel-green: #b3e283;
+				--pastel-yellow: #f9e79f;
+				--pastel-pink: #ffc6c4;
+				--pastel-blue: #a7d7e8;
+				--pastel-purple: #c4a7e7;
+			}
+		
+			body {
+				font-family: sans-serif;
+				background-color: var(--pastel-green); /* Main background */
+				color: #333; /* Darker text for readability */
+				margin: 0;
+			}
+		
+			.container {
+				max-width: 960px;
+				margin: 0 auto;
+				padding: 20px;
+				background-color: #fff; /* Content background */
+				box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+				border-radius: 8px;
+			}
+		
+			/* Header styles */
+			.header {
+				background-color: var(--pastel-yellow); /* Header background */
+				padding: 20px 0;
+				text-align: center;
+				margin-bottom: 20px;
+			}
+		
+			.header h1 {
+				color: #333;
+				margin: 0;
+			}
+		
+			/* Navigation styles */
+			.nav ul {
+				list-style: none;
+				padding: 0;
+				margin: 0;
+				text-align: center;
+			}
+		
+			.nav li {
+				display: inline;
+				margin: 0 10px;
+			}
+		
+			.nav a {
+				color: #333;
+				text-decoration: none;
+				font-weight: bold;
+			}
+		
+			/* Footer styles */
+			.footer {
+				background-color: var(--pastel-blue); /* Footer background */
+				padding: 20px 0;
+				text-align: center;
+				margin-top: 20px;
+				color: #333;
+			}
+		</style>
+	</body>
+</html>
+
+<script>
+	import Header from '../components/Header.astro';
+	import Footer from '../components/Footer.astro';
+</script>

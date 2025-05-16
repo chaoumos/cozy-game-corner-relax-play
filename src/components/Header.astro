@@ -1,0 +1,46 @@
+---
+// src/components/Header.astro
+
+const blogName = Astro.site.title;
+---
+
+<header class="bg-pastel-green py-4 shadow-md">
+  <div class="container mx-auto flex items-center justify-between">
+    <a href="/" class="text-2xl font-bold text-pastel-brown hover:text-pastel-purple">{blogName}</a>
+    <nav>
+      <ul class="flex space-x-6">
+        <li><a href="/" class="text-pastel-brown hover:text-pastel-purple">Home</a></li>
+        <li><a href="/blog" class="text-pastel-brown hover:text-pastel-purple">Blog</a></li>
+        <li><a href="/recommendations" class="text-pastel-brown hover:text-pastel-purple">Recommendations</a></li>
+        <li><a href="/community" class="text-pastel-brown hover:text-pastel-purple">Community Forum</a></li>
+        <li><a href="/news" class="text-pastel-brown hover:text-pastel-purple">News & Updates</a></li>
+      </ul>
+    </nav>
+    <div class="flex items-center">
+      <input type="text" placeholder="Search..." class="px-2 py-1 rounded-md text-pastel-brown bg-pastel-yellow focus:outline-none">
+      <button class="ml-2 px-4 py-1 bg-pastel-blue text-white rounded-md hover:bg-pastel-purple focus:outline-none">Search</button>
+    </div>
+  </div>
+</header>
+
+<style>
+  .bg-pastel-green {
+    background-color: #b0e293; /* Light Green */
+  }
+
+  .text-pastel-brown {
+    color: #a38b64; /* Light Brown */
+  }
+
+  .text-pastel-purple {
+    color: #c2a3ff; /* Light Purple */
+  }
+
+  .bg-pastel-yellow {
+    background-color: #fffacd; /* Light Yellow */
+  }
+
+  .bg-pastel-blue {
+    background-color: #add8e6; /* Light Blue */
+  }
+</style>

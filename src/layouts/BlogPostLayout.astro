@@ -1,0 +1,32 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import type { CollectionEntry } from "astro:content";
+import { Image } from '@astrojs/image/components';
+
+interface Props {
+    frontmatter: CollectionEntry<"blog">['data'];
+}
+
+const { frontmatter } = Astro.props;
+const { title, pubDate, author, image, description } = frontmatter;
+---
+
+<BaseLayout title={title} description={description}>
+    <article class="prose lg:prose-xl">
+        <h1 class="text-3xl font-bold text-center mb-4">{title}</h1>
+        <div class="text-center text-gray-500 mb-6">
+            Published on <time datetime={pubDate.toISOString()}>
+                {new Date(pubDate).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'long',
+                    day: 'numeric',
+                })}
+            </time> by {author}
+        </div>
+
+        {image && <Image src={image} alt={title} width={720} height={360} class="rounded-md mb-6 mx-auto" />}
+
+        <slot />
+    </article>
+</BaseLayout>
+

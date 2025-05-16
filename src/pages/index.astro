@@ -1,0 +1,52 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const blogName = "Cozy Game Corner";
+const blogTheme = "relaxing and heartwarming gaming experiences.";
+---
+
+<BaseLayout title={blogName} description="The home page for Cozy Game Corner.">
+  <main class="container mx-auto px-4 py-8">
+    <section class="text-center">
+      <h1 class="text-4xl font-bold mb-4">Welcome to {blogName}!</h1>
+      <p class="text-lg mb-6">Your go-to place for all things related to {blogTheme}.</p>
+      <p class="mb-6">
+        Explore our recommendations, join the community, and stay updated on the latest news!
+      </p>
+      <a href="/blog" class="bg-pastel-green hover:bg-pastel-blue text-white font-bold py-2 px-4 rounded">Visit the Blog</a>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-2xl font-semibold mb-4">About {blogName}</h2>
+      <p class="mb-4">
+        {blogName} is dedicated to providing a cozy and relaxing space for gamers who love heartwarming and gentle video games. We offer a variety of content, including game reviews, community forums, and news about upcoming releases.
+      </p>
+      <p>
+        Our goal is to create a welcoming environment where you can discover new games, share your experiences, and connect with other like-minded gamers. Think of it as a digital cozy corner where you can unwind and enjoy the simple pleasures of gaming.
+      </p>
+    </section>
+
+    <section class="mt-8">
+      <h2 class="text-2xl font-semibold mb-4">Key Sections</h2>
+      <ul class="list-disc list-inside">
+        <li><a href="/recommendations" class="text-pastel-blue hover:underline">Recommendations</a>: Game reviews and user ratings to help you find your next cozy adventure.</li>
+        <li><a href="/community" class="text-pastel-blue hover:underline">Community Forum</a>: Connect with other gamers, discuss your favorite games, and share your experiences.</li>
+        <li><a href="/news" class="text-pastel-blue hover:underline">News & Updates</a>: Stay informed about upcoming cozy game releases and other relevant news.</li>
+      </ul>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .bg-pastel-green {
+    background-color: #c8e6c9; /* Light green */
+  }
+
+  .bg-pastel-blue {
+    background-color: #bbdefb; /* Light blue */
+  }
+
+  .text-pastel-blue {
+    color: #1e88e5; /* A slightly darker blue for text */
+  }
+</style>
